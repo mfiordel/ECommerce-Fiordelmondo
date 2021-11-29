@@ -1,11 +1,15 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
 import './styles.css';
 
-const Item = ({character}) => {
+const Item = ( {item} ) => {
     return (
         <div>
-            <img className = "product_img" src={character.image}/>
-            <h2 className = "product_title">{character.name}</h2>
+            <NavLink to = {`/item/${item.id}`}> 
+                <img className = "product_img" src={item.image}/>
+            </NavLink>
+            <h2 className = "product_title">{item.name}</h2>
+            
         </div>
     )
 }

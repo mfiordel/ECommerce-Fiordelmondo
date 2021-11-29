@@ -1,22 +1,33 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom'
+import { getItems, getItemsByCategory } from '../services/getItem';
 import ItemList from "../components/itemList/ItemList";
 
 const ItemListContainer = () => {
-    const [characters, setCharacters] = useState([])
+    const {categoryId} = useParams();
+    const [items, setItems] = useState([])
 
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/character')
-        .then((res)=> res.json())
-        .then( data => {
-            setCharacters(data.results)
-        })
-        .catch(err => err)
-    }, [])
+        (async () => {
+            if (categoryId !== undefined){
+                const allItems = await getItemsByCategory(categoryId);
+                setItems(allItems)
+            }
+            else {
+                const allItems = await getItems()
+                setItems(allItems)
+            }
+        })()
+    }, [categoryId]);
 
-    setTimeout(useEffect, 2000);
 
     return (
-        <ItemList characters = {characters} />
+        <>
+        {items.length !== 0 ? <ItemList items = {items} />
+        :
+        null
+        }
+        </>
     )
 
     

@@ -1,6 +1,7 @@
 import React from "react";
 import "tailwindcss/tailwind.css"
 import CartWidget from '../cartWidget/CartWidget'
+import { NavLink } from "react-router-dom";
 
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
@@ -40,19 +41,15 @@ export default function NavBar() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
+                  <NavLink to="/" className='bg-gray-900 text-white'>
+                    Inicio
+                  </NavLink>
+                  <NavLink to={`/category/Human`} className='bg-gray-900 text-white'>
+                    Humanos
+                  </NavLink>
+                  <NavLink to={`/category/Alien`} className='bg-gray-900 text-white'>
+                    Alien
+                  </NavLink>
                   </div>
                 </div>
               </div>
@@ -61,8 +58,7 @@ export default function NavBar() {
                   type="button"
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
-                  
-                <CartWidget /> 
+                
 
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -70,14 +66,14 @@ export default function NavBar() {
               </div>
             </div>
           </div>
-
+          
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
+                <NavLink to="/">
                 <Disclosure.Button
                   key={item.name}
                   as="a"
-                  href={item.href}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
@@ -86,6 +82,7 @@ export default function NavBar() {
                 >
                   {item.name}
                 </Disclosure.Button>
+                </NavLink>
               ))}
             </div>
           </Disclosure.Panel>
