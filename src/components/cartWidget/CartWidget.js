@@ -5,7 +5,12 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline'
 import ItemCount from "../itemCount/ItemCount"
-import ItemListContainer from "../../containers/ItemListContainer";
+import fotoCarrito1 from "../../assets/fotoCarrito1.jpg";
+import fotoCarrito2 from "../../assets/fotoCarrito2.jpg";
+import { NavLink } from "react-router-dom";
+let foto1 = fotoCarrito1;
+let foto2 = fotoCarrito2;
+
 
 const products = [
   {
@@ -15,7 +20,7 @@ const products = [
     type: 'Photoshop',
     price: '$90.00',
     quantity: 1,
-    imageSrc: '#',
+    imageSrc: foto2,
     imageAlt: 'Imágen para producto 1.',
   },
   {
@@ -25,7 +30,7 @@ const products = [
     type: 'AfterEffects',
     price: '$32.00',
     quantity: 1,
-    imageSrc: '#',
+    imageSrc: foto1,
     imageAlt:
       'Imágen para producto 2',
   },
@@ -67,6 +72,7 @@ export default function CartWidget() {
                     <div className="flex items-start justify-between">
                       <Dialog.Title className="text-lg font-medium text-gray-900">CartWidget</Dialog.Title>
                       <div className="ml-3 h-7 flex items-center">
+                        <NavLink to={`/`}>
                         <button
                           type="button"
                           className="-m-2 p-2 text-gray-400 hover:text-gray-500"
@@ -75,17 +81,18 @@ export default function CartWidget() {
                           <span className="sr-only">Close panel</span>
                           <XIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
+                        </NavLink>
                       </div>
                     </div>
 
                     <div className="mt-8">
                       <div className="flow-root">
-                        <ul role="list" className="-my-6 divide-y divide-gray-200">
+                        <ul className="-my-6 divide-y divide-gray-200">
                           {products.map((product) => (
                             <li key={product.id} className="py-6 flex">
                               <div className="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
                                 <img
-                                  src={product.imageSrc}
+                                  src= {product.imageSrc}
                                   alt={product.imageAlt}
                                   className="w-full h-full object-center object-cover"
                                 />
@@ -95,7 +102,7 @@ export default function CartWidget() {
                                 <div>
                                   <div className="flex justify-between text-base font-medium text-gray-900">
                                     <h3>
-                                      <a href={product.href}>{product.name}</a>
+   
                                     </h3>
                                     <p className="ml-4">{product.price}</p>
                                   </div>
@@ -126,24 +133,16 @@ export default function CartWidget() {
                     </div>
                     <p className="mt-0.5 text-sm text-gray-500">Impuestos y tasas serán calculados al finalizar la compra.</p>
                     <div className="mt-6">
-                      <a
-                        href="#"
+                      <NavLink to={`/`}
                         className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                       >
                         Comprar
-                      </a>
+                      </NavLink>
                     </div>
                     <div className="mt-6 flex justify-center text-sm text-center text-gray-500">
-                      <p>
-                        o{' '}
-                        <button
-                          type="button"
-                          className="text-indigo-600 font-medium hover:text-indigo-500"
-                          onClick={() => setOpen(false)}
-                        >
+                          <NavLink to={`/`}>
                           Continuar eligiendo<span aria-hidden="true"> &rarr;</span>
-                        </button>
-                      </p>
+                          </NavLink>
                     </div>
                   </div>
                 </div>

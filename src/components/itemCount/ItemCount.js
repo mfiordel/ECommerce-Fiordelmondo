@@ -5,7 +5,13 @@
         const [contador, setContador] = useState(initial);
 
         const handleOp = (simbolo) => {
+
+            if(contador > 0){
             simbolo === "-" ? setContador(contador - 1) : setContador(contador + 1)
+            }
+            else {
+                setContador(contador + 1)
+            }
         }
 
         return ( 
