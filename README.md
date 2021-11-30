@@ -81,8 +81,8 @@ En el se encuentra el componente ItemCount
 * src/components/itemCount/ItemCount.js
 El componente ItemCount maneja la cantidad de unidades elegidas por item para luego ser compradas
 
-###Assets
+### Assets
 En la carpeta src/assets se encuentran las imágenes usadas de manera local
 
-###Autor
+### Autor
 Micael Fiordelmondo
