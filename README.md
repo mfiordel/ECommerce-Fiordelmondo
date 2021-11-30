@@ -6,29 +6,29 @@
 ##Camada: 19790
 
 
-##Proyecto e-commerce inspirado en un emprendimiento personal 
-*El proyecto se desarrolla dentro del marco de aprendizaje del curso de React Js en la plataforma Coderhouse.
-*Pretende la creación de un e-commerce en el que se pueda navegar para encontrar, filtrar y categorizar productos para luego ser incluidos en un carrito de compras.
-*Para fines de aprendizaje, de momento los productos del e-commerse son mocks generados por una api no pertinente a la intención final.
+## Proyecto e-commerce inspirado en un emprendimiento personal 
+* El proyecto se desarrolla dentro del marco de aprendizaje del curso de React Js en la plataforma Coderhouse.
+* Pretende la creación de un e-commerce en el que se pueda navegar para encontrar, filtrar y categorizar productos para luego ser incluidos en un carrito de compras.
+* Para fines de aprendizaje, de momento los productos del e-commerse son mocks generados por una api no pertinente a la intención final.
 
-##Pre-requisitos
-*La aplicación se levanta de manera local utilizando el lenguaje JavaScript y JSX mediante la librería ReactJs: 
-*La misma es descargada desde su fuente original: https://es.reactjs.org/
-*El estilo esta facilitado por la librería Tailwind CSS 2.2.17. Accesible desde: https://tailwindcss.com/. Para este, se precisa también la dependencia Craco 6.4.0
-*Las otras dependencias necesarias a instalar que no vienen por defecto en la instalación de React son:
-** React Router Dom 5.0.2
-** Babel 5.0.2
+## Pre-requisitos
+* La aplicación se levanta de manera local utilizando el lenguaje JavaScript y JSX mediante la librería ReactJs: 
+* La misma es descargada desde su fuente original: https://es.reactjs.org/
+* El estilo esta facilitado por la librería Tailwind CSS 2.2.17. Accesible desde: https://tailwindcss.com/. Para este, se precisa también la dependencia Craco 6.4.0
+* Las otras dependencias necesarias a instalar que no vienen por defecto en la instalación de React son:
+* React Router Dom 5.0.2
+* Babel 5.0.2
 
-##Instalaciónes
+## Instalaciónes
 A traves de NodeJs > node: '16.13.0':
 
-** Tailwind CSS > "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
-** Craco 6.4.0 > "@craco/craco": "^6.4.0"
-** React Router Dom > "react-router-dom" :    "^5.0.2"
-** Babel 5.0.2 > "@babel/highlight": "^7.16.0"
-** React 17.0.2 > "react": "^17.0.2"
+* Tailwind CSS > "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+* Craco 6.4.0 > "@craco/craco": "^6.4.0"
+* React Router Dom > "react-router-dom" :    "^5.0.2"
+* Babel 5.0.2 > "@babel/highlight": "^7.16.0"
+* React 17.0.2 > "react": "^17.0.2"
 
-##Funcionamiento
+## Funcionamiento
 Tras levantar de manera local la aplicación con > npm start
 
 ### BrowserRouter, Switch, Route en App.js
@@ -81,10 +81,8 @@ En el se encuentra el componente ItemCount
 * src/components/itemCount/ItemCount.js
 El componente ItemCount maneja la cantidad de unidades elegidas por item para luego ser compradas
 
+###Assets
+En la carpeta src/assets se encuentran las imágenes usadas de manera local
+
 ###Autor
 Micael Fiordelmondo
-###Primera
-
-
-
-
