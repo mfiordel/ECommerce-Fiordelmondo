@@ -1,9 +1,9 @@
 # Nombre de la App: Mantis Producciones
-##Primera Entrega Proyecto Final de React Js
-##Alumno: Micael Fiordelmondo
-##Profesor: Luciano Calderon
-##Tutor: Mauricio Monteros
-##Camada: 19790
+### Primera Entrega Proyecto Final de React Js
+### Alumno: Micael Fiordelmondo
+### Profesor: Luciano Calderon
+### Tutor: Mauricio Monteros
+### Camada: 19790
 
 
 ## Proyecto e-commerce inspirado en un emprendimiento personal 
