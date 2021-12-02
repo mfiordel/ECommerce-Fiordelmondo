@@ -40,7 +40,7 @@ Se monta de manera permanente en App.js el componente NavBar.js mediante el cual
 
 #### Contenedores
 
-##### GetItem
+##### getItem
 * src/services/getItem.js
 A traves de diferentes promesas mediante el metodo fetch se establece la petición a la Api que nos devuelve los datos que precisamos
 
