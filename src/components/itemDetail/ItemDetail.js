@@ -1,7 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import ItemCount from '../itemCount/ItemCount';
 
 const ItemDetail = ( {detailItem} ) => {
+
+    const [buy, setBuy] = useState(false);
+
+    const handleBuy = (qty) => {
+        setBuy(true);
+    }
+
 
     return (
         
@@ -18,9 +27,11 @@ const ItemDetail = ( {detailItem} ) => {
                 <p className = "">Fecha de Creación:{detailItem.created}</p>
 
                 <div className="mt-4 px-3 py-1">
-                    <NavLink to={`/shop`} className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">
-                        Agregar al carrito
-                    </NavLink>
+                {!buy ?
+                <ItemCount stock = {10} initial={1} onAdd = {(qty) => handleBuy (qty)} />
+                :
+                <button className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">Finalizar Compra</button>
+                }
                 </div>
             </div>
 
