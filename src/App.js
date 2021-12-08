@@ -5,10 +5,11 @@ import ItemDetailContainer from './containers/ItemDetailContainer';
 import ItemListContainer from './containers/ItemListContainer';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import CartWidget from './components/cartWidget/CartWidget';
+import CartContextProvider from './Context/CartContext'
 
 function App() {
   return (
-    <>
+    <CartContextProvider >
     <Router>
       <NavBar/>
       <Switch>
@@ -20,7 +21,7 @@ function App() {
         <Route element={<h2>Not found</h2>}/>
       </Switch>
     </Router>
-    </>
+    </CartContextProvider>
   );
 }
 

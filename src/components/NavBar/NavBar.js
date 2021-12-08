@@ -7,6 +7,9 @@ import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import logo from '../../assets/logo.png'
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
+import CartWidget from "../cartWidget/CartWidget"
 
 
 function classNames(...classes) {
@@ -14,6 +17,10 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
+
+  const {cart} = useContext(CartContext);
+  const cartQty = cart.length;
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -91,8 +98,9 @@ export default function NavBar() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   <NavLink to={`/shop`} state={`open`} className="font-semibold py-3 px-1 text-white">     
-                  CartWidget
+                  CartWidget 
                   </NavLink>
+                  <span className="text-white font-semibold">{cartQty}</span>
               </div>
             </div>
           </div>

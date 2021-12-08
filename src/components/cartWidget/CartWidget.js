@@ -1,10 +1,10 @@
 import React from "react";
 import "tailwindcss/tailwind.css"
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from 'react'
+import { Fragment, useState} from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline'
-import ItemCount from "../itemCount/ItemCount"
+import CartContext from '../../Context/CartContext'
 import fotoCarrito1 from "../../assets/fotoCarrito1.jpg";
 import fotoCarrito2 from "../../assets/fotoCarrito2.jpg";
 import { NavLink } from "react-router-dom";
@@ -39,6 +39,7 @@ const products = [
 
 export default function CartWidget() {
   const [open, setOpen] = useState(true)
+
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -109,7 +110,7 @@ export default function CartWidget() {
                                   <p className="mt-1 text-sm text-gray-500">{product.type}</p>
                                 </div>
                                 <div className="flex-1 flex items-end justify-between text-sm">
-                                  <ItemCount initial={1} stock={10}/>
+
                                   <p className="text-gray-500">Cantidad {product.quantity}</p>
 
                                   <div className="flex">
