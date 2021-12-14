@@ -18,8 +18,6 @@ function classNames(...classes) {
 
 export default function NavBar() {
 
-  const {cart} = useContext(CartContext);
-  const cartQty = cart.length;
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -70,21 +68,21 @@ export default function NavBar() {
                             <div className="py-1">
                               <Menu.Item>
                                 {({ active }) => (
-                                  <NavLink to={`/category/Alien`} className={classNames(
+                                  <NavLink to={`/category/animaciones`} className={classNames(
                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                     'block px-4 py-2 text-sm'
                                   )}>
-                                    Alien
+                                    Animaciones
                                   </NavLink>
                                 )}
                               </Menu.Item>
                               <Menu.Item>
                                 {({ active }) => (
-                                  <NavLink to={`/category/Human`} className={classNames(
+                                  <NavLink to={`/category/diseno`} className={classNames(
                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                     'block px-4 py-2 text-sm'
                                   )}>
-                                    Humanos
+                                    Diseno
                                   </NavLink>
                                 )}
                               </Menu.Item>
@@ -97,10 +95,7 @@ export default function NavBar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <NavLink to={`/shop`} state={`open`} className="font-semibold py-3 px-1 text-white">     
-                  CartWidget 
-                  </NavLink>
-                  <span className="text-white font-semibold">{cartQty}</span>
+                <CartWidget/>
               </div>
             </div>
           </div>

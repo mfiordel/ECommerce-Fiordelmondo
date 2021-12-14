@@ -4,7 +4,8 @@ import "tailwindcss/tailwind.css"
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import ItemListContainer from './containers/ItemListContainer';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import CartWidget from './components/cartWidget/CartWidget';
+import CartWidget from './components/cartWidget/CartWidget'
+import CartView from './components/cartView/CartView';
 import CartContextProvider from './Context/CartContext'
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
         <Route exact path = "/" ><ItemListContainer/></Route>
         <Route exact path = "/category/:categoryId"><ItemListContainer/></Route>
         <Route exact path = "/item/:id" ><ItemDetailContainer/></Route>
-        <Route exact path = "/shop" ><CartWidget/></Route>
-
+        <Route exact path = "/shop"><CartWidget/></Route>
+        <Route exact path= "/cart"><CartView/></Route>
         <Route element={<h2>Not found</h2>}/>
       </Switch>
     </Router>

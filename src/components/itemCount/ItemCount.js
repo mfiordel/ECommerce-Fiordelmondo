@@ -1,35 +1,37 @@
-    import React, {useState} from "react";
+    import React, { useState } from "react";
 
 
-    const ItemCount = ( { initial, stock, onAdd } ) => {
-        const [contador, setContador] = useState(initial);
-        const [out, setOut] = useState(false)
+    const ItemCount = ( { max, setQuantity, quantity, onAdd } ) => {
 
         const handleAdd = () => {
-            if (contador < stock) {
-                setContador(contador + 1);
-            }
-            else {
-                setOut (true);
-            }
+            quantity < max && setQuantity(quantity + 1)
         }
     
         const handleSub = () => {
-            if (contador === 1) {
-                return
-            } else {
-                setContador(contador - 1)
-                setOut(false);
-            }
+            quantity > 0 && setQuantity(quantity - 1)
         }
+
+        const config = {
+            className: `btn ${quantity === 0 ? "cursor-not-allowed" : "bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4"}`,
+            disabled: quantity === 0,
+            onClick: handleSub
+        }
+
         return ( 
             <div>
-                <button className="contador" onClick={() => handleSub()} className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">-</button>
-                <span className="contador" className="font-semibold rounded-full mt-4 pt-2 pb-2 px-4">{contador}</span>
-                <button className="contador" onClick={() => handleAdd()} className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">+</button>
-                {out && <span>Fuera de stock</span>}
+                <button {...config}>
+                        -
+                </button>
+                <span className="font-semibold rounded-full mt-4 pt-2 pb-2 px-4">{quantity}</span>
+                <button 
+                    className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4"
+                    disabled={quantity === max}
+                    onClick={handleAdd}
+                >
+                    +
+                </button>
                 <br/>
-                <button onClick={() => onAdd(contador)} className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">Agregar al carrito</button>
+                <button onClick={onAdd} disabled={quantity==0} className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">Agregar al carrito</button>
             </div>
         );
     };
