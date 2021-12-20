@@ -5,7 +5,7 @@ import { CartItem } from './CartItem';
 
 const CartView = () => {
 
-    const {cart,cleanCart} = useContext(CartContext)
+    const {cart, cleanCart, totalBuy} = useContext(CartContext)
 
     if (cart.length === 0 ){
         return <div className="container box-border justify-center inline-flex">
@@ -24,14 +24,17 @@ const CartView = () => {
                 {
                     cart.map((prod) => <CartItem key={prod.id} {...prod}/>)
                 }
+                
             </div>
+            
             <div className="container box-border self-center justify-self-center flex-row inline-flex justify-center flex-wrap flex-grow">
+                <h3>Precio: ${totalBuy()}</h3>
                 <button 
                     className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4" 
                     onClick={cleanCart}>
                         Vaciar
                 </button>
-                <button className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">Terminar Compra</button>
+                <NavLink to="/checkout" className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">Terminar Compra</NavLink>
             </div>
         </div>
     )
