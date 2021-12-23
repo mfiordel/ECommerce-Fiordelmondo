@@ -12,26 +12,27 @@
         }
 
         const config = {
-            className: `btn ${quantity === 0 ? "cursor-not-allowed" : "bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4"}`,
+            className: `btn ${quantity === 0 ? "cursor-not-allowed" : "mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none"}`,
             disabled: quantity === 0,
             onClick: handleSub
         }
 
         return ( 
             <div>
-                <button {...config}>
+                <button className='mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none'
+                     {...config}>
                         -
                 </button>
                 <span className="font-semibold rounded-full mt-4 pt-2 pb-2 px-4">{quantity}</span>
                 <button 
-                    className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4"
+                    className='mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none'
                     disabled={quantity === max}
                     onClick={handleAdd}
                 >
                     +
                 </button>
                 <br/>
-                <button onClick={onAdd} disabled={quantity==0} className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">Agregar al carrito</button>
+                <button onClick={onAdd} disabled={quantity==0} className='mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white'>Agregar al carrito</button>
             </div>
         );
     };

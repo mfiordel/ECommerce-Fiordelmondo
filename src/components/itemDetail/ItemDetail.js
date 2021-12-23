@@ -18,7 +18,8 @@ const ItemDetail = ( {id, name, img, desc, price, category, stock} ) => {
                 name,
                 price,
                 img,
-                quantity
+                quantity,
+                stock
             })
         }
     }
@@ -26,18 +27,17 @@ const ItemDetail = ( {id, name, img, desc, price, category, stock} ) => {
 
     return (
         
-        <div className="container box-border border-4 ml-10 flex-row inline-flex flex-grow justify-center content-center">
+        <div className="container box-border border-4 inline-flex flex-grow justify-center content-center">
             <div className="box-border my-3 mx-4 text-center justify-items-between py-4 px-4 shadow-2xl self-center font-semibold">
                 <img className = "rounded-full shadow-2xl w-54 h-54" src={img} alt={name}/>
                 <h2 className = "text-xl my-4">{name}</h2>
             </div>
-            <div className="container flex-grow box-border my-3 mx-4 text-center justify-items-center py-4 px-4 shadow-2xl self-center ">
+            <div className="container flex-grow box-border my-3 mx-4 text-center py-4 px-4 shadow-2xl ">
                 <h2 className = "text-4xl mb-4 font-semibold">{name}</h2>
-                <p className = "">Categoria: {category}</p>
-                <p className = "">Stock: {stock}</p>
-                <p className = "">Precio: ${price}</p>
-                <p className = "">Descripcion:{desc}</p>
-
+                <p><span className = "mb-4 font-semibold">Categoria: </span> {category}</p>
+                <p className = ""><span className = "mb-4 font-semibold">Stock: </span> {stock}</p>
+                <p className = ""><span className = "mb-4 font-semibold">Precio: </span> ${price}</p>
+                <p className = ""><span className = "mb-4 font-semibold">Descripcion: </span>{desc}</p>
                 {
                     !isInCart(id)
                         ?   <ItemCount 
@@ -46,7 +46,18 @@ const ItemDetail = ( {id, name, img, desc, price, category, stock} ) => {
                                 setQuantity={setQuantity}
                                 onAdd = {handleAdd}
                             />
-                        :   <NavLink to="/cart" className="bg-gray-600 font-semibold text-white rounded-full mt-4 pt-2 pb-2 px-4">Finalizar Compra</NavLink>
+                        :   <div className='p-6 flex justify-center'>
+                                <NavLink to="/cart" 
+                                    className='flex mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white'>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                        </svg>
+                                    </span>
+                                    Ir al Carrito
+                                </NavLink>
+                               
+                            </div>
                 }
             </div>
             

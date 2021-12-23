@@ -4,6 +4,7 @@ import { getItem } from '../services/getItem'
 import ItemDetail from '../components/itemDetail/ItemDetail';
 import { db } from "../../src/firebase/config";
 import { doc, getDoc } from "firebase/firestore"
+import Loader from "../components/loader/Loader";
 
 const ItemDetailContainer = () => {
 
@@ -32,7 +33,7 @@ const ItemDetailContainer = () => {
             itemDetail !== undefined ?
             <ItemDetail {...itemDetail} />
             :
-            null
+            <Loader/>
         }
         </>
     )

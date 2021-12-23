@@ -14,6 +14,20 @@ const CartContextProvider = ({children}) => {
         setCart( cart.filter(prod => prod.id !== id));
     }
 
+    const subQuantity = (id) => {
+        const idx = cart.findIndex( item => item.id === id);
+        let newCart = [...cart]
+        newCart[idx].quantity = newCart[idx].quantity - 1;
+        setCart(newCart)
+    }
+    
+    const addQuantity = (id) => {
+        const idx = cart.findIndex( item => item.id === id);
+        let newCart = [...cart]
+        newCart[idx].quantity = newCart[idx].quantity + 1;
+        setCart(newCart)
+    }
+
     const cleanCart = () => {
         setCart([]);
     }
@@ -38,6 +52,8 @@ const CartContextProvider = ({children}) => {
             addCart,
             deleteCart,
             cleanCart,
+            subQuantity,
+            addQuantity,
             isInCart,
             totalQuantity,
             totalBuy

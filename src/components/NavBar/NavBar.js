@@ -49,7 +49,7 @@ export default function NavBar() {
                     </NavLink>
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
-                          <Menu.Button className="inline-flex mt-2 justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                          <Menu.Button className="inline-flex mt-2 justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-500">
                             Categorías
                             <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                           </Menu.Button>
@@ -82,7 +82,7 @@ export default function NavBar() {
                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                     'block px-4 py-2 text-sm'
                                   )}>
-                                    Diseno
+                                    Diseño Gráfico
                                   </NavLink>
                                 )}
                               </Menu.Item>
@@ -101,22 +101,18 @@ export default function NavBar() {
           </div>
           
           <Disclosure.Panel className="sm:hidden">
-          <div className="flex space-x-4">
-                  <NavLink to="/" className='bg-gray-900 text-white w-24 h-8 rounded-full text-center py-1 font-semibold'>
-                    Inicio
-                  </NavLink>
-                  <NavLink to={`/category/Human`} className='bg-gray-900 text-white w-24 h-8 rounded-full text-center py-1 font-semibold'>
-                    Humanos
-                  </NavLink>
-                  <NavLink to={`/category/Alien`} className='bg-gray-900 text-white w-24 h-8 rounded-full text-center py-1 font-semibold'>
-                    Alien
-                  </NavLink>
-                  <Menu as="div" className="relative inline-block text-left">
+          <div className="flex-inline space-x-4 flex-wrap">
+                  
+                  <Menu as="div" className="relative inline-block text-left space-x-2">
                         <div>
-                          <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                          <NavLink to="/" className='inline-flex flex-shrink justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500'>
+                                  Inicio
+                          </NavLink>
+                          <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-500">
                             Categorías
                             <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                           </Menu.Button>
+                          
                         </div>
 
                         <Transition
@@ -128,26 +124,23 @@ export default function NavBar() {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                          <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <Menu.Items className="origin-top-right right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <div className="py-1">
                               <Menu.Item>
                                 {({ active }) => (
-                                  <NavLink to={`/category/Alien`} className={classNames(
-                                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                    'block px-4 py-2 text-sm'
-                                  )}>
-                                    Alien
-                                  </NavLink>
+                                  
+                                <NavLink to={`/category/diseno`} className='inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500'>
+                                Diseño Gráfico
+                              </NavLink>
+                                
                                 )}
                               </Menu.Item>
                               <Menu.Item>
                                 {({ active }) => (
-                                  <NavLink to={`/category/Human`} className={classNames(
-                                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                    'block px-4 py-2 text-sm'
-                                  )}>
-                                    Humanos
-                                  </NavLink>
+                                  <NavLink to={`/category/animaciones`} className='inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500'>
+                                  Animaciones
+                                </NavLink>
+                                
                                 )}
                               </Menu.Item>
                               
