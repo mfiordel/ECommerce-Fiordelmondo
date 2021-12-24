@@ -7,7 +7,7 @@ import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import CartWidget from './components/cartWidget/CartWidget';
 import CartView from './components/cartView/CartView';
 import CartContextProvider from './Context/CartContext';
-import Checkout from './components/Chekout/Checkout';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {

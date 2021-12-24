@@ -1,4 +1,4 @@
-    import React, { useState } from "react";
+    import React from "react";
 
 
     const ItemCount = ( { max, setQuantity, quantity, onAdd } ) => {
@@ -32,7 +32,7 @@
                     +
                 </button>
                 <br/>
-                <button onClick={onAdd} disabled={quantity==0} className='mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white'>Agregar al carrito</button>
+                <button onClick={onAdd} disabled={quantity===0} className='mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white'>Agregar al carrito</button>
             </div>
         );
     };

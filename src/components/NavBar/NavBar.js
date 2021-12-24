@@ -7,8 +7,6 @@ import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import logo from '../../assets/logo.png'
-import { useContext } from "react";
-import { CartContext } from "../../Context/CartContext";
 import CartWidget from "../cartWidget/CartWidget"
 
 

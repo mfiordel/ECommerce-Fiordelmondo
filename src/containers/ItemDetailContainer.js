@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
-import { getItem } from '../services/getItem'
 import ItemDetail from '../components/itemDetail/ItemDetail';
 import { db } from "../../src/firebase/config";
 import { doc, getDoc } from "firebase/firestore"
@@ -25,7 +24,7 @@ const ItemDetailContainer = () => {
                 setItemDetail( data )
             })
 
-    }, [])
+    }, [id])
 
     return (
         <>
