@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { NavLink } from 'react-router-dom'
-import { CartContext } from "../../Context/CartContext";
+import { CartContext } from "../../context/CartContext";
 import { CartItem } from './CartItem';
+import { FireIcon } from '@heroicons/react/outline'
 
 const CartView = () => {
 
@@ -47,24 +48,28 @@ const CartView = () => {
             </div>
             <div className="container box-border self-center justify-self-center flex-row inline-flex justify-center">
                 <h3 className='mt-2 p-2 text-center shadow-lg text-sm'>
-                    <span className='font-semibold text-md '>
+                    <span className='font-semibold text-md flex '>
                         Precio Total:
                     </span> 
                     ${totalBuy()}
                 </h3>
             </div>
-            <div className="container box-border self-center justify-self-center inline-flex justify-center">
+            <div className="container box-border self-center justify-self-center inline-flex justify-center flex-wrap">
                 <button 
-                    className='mt-2 w-56 p-0 rounded-md text-center shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white '
+                    className='mt-2 w-56 p-0 rounded-md text-center shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-400 text-white '
                     onClick={cleanCart}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 relative left-24"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                     </svg>
                     Vaciar
                 </button>
+                <NavLink to="/" className='mt-2 w-56 p-0 rounded-md text-center shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-500 text-white '> 
+                    <FireIcon className="ml-24 h-6 w-6" aria-hidden="true" fill="none" />
+                        Seguir comprando
+                </NavLink>
                 <NavLink 
                     to="/checkout" 
-                    className='mt-2 w-56 p-0 rounded-md text-center shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-400 text-white '>
+                    className='mt-2 w-56 p-0 rounded-md text-center shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white '>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                     </svg>

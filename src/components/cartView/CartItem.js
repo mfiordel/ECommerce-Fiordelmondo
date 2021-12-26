@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
-import { useState } from 'react/cjs/react.development';
-import { CartContext } from '../../Context/CartContext'
+import React, { useContext, useState } from 'react';
+import { CartContext } from '../../context/CartContext'
 
 export const CartItem = ({name, price, quantity, id, img, stock, max}) => {
     const [quantityy, setQuantityy] = useState(quantity)
@@ -37,9 +36,10 @@ export const CartItem = ({name, price, quantity, id, img, stock, max}) => {
                             </div>
                             <p className="mt-1 text-sm text-gray-500">${price}</p>
                         </div>
-                        <div className="flex-1 flex items-end justify-between text-sm">
-
+                        <div className="flex-1 flex items-end justify-between text-sm flex-wrap">
+                            
                             <p className="text-gray-500">Cantidad: {quantity}</p>
+                            <div>
                             <button 
                                 className='ml-1 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 bg-gray-400 text-white focus:outline-none'
                                 onClick={handleQuantitySub}>
@@ -49,16 +49,17 @@ export const CartItem = ({name, price, quantity, id, img, stock, max}) => {
                                 className='ml-1 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 bg-gray-400 text-white focus:outline-none'
                                 onClick={handleQuantityAdd}>
                                 +
-                                </button>
-                            <span className='font-semibold'>(El stock actual es de {max})</span>
-                        </div>    
+                            </button>
+                            </div>
+                        </div> 
+                        <span className='font-semibold text-xs'>(El stock actual es de {max})</span>   
                         </div>
                     </li>
                 </ul>
                 </div>
             </div>
             <button 
-                className='z-0 mt-2 h-10 w-56 pt-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white '
+                className='mt-2 w-48 p-0 rounded-md text-center shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white '
                 onClick={() => { deleteCart(id)}}>
                     Quitar Del Carrito
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-2 relative z-10 bottom-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

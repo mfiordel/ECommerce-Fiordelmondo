@@ -2,8 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import  { CartContext }  from '../../Context/CartContext';
+import  { CartContext }  from '../../context/CartContext';
 import ItemCount from '../itemCount/ItemCount';
+import { FireIcon } from '@heroicons/react/outline'
 
 const ItemDetail = ( {id, name, img, desc, price, category, stock} ) => {
 
@@ -27,7 +28,7 @@ const ItemDetail = ( {id, name, img, desc, price, category, stock} ) => {
 
     return (
         
-        <div className="container box-border border-4 inline-flex flex-grow justify-center content-center">
+        <div className="container box-border border-4 inline-flex flex-grow justify-center content-center sm:flex-wrap md:flex-nowrap">
             <div className="box-border my-3 mx-4 text-center justify-items-between py-4 px-4 shadow-2xl self-center font-semibold">
                 <img className = "rounded-full shadow-2xl w-54 h-54" src={img} alt={name}/>
                 <h2 className = "text-xl my-4">{name}</h2>
@@ -46,7 +47,8 @@ const ItemDetail = ( {id, name, img, desc, price, category, stock} ) => {
                                 setQuantity={setQuantity}
                                 onAdd = {handleAdd}
                             />
-                        :   <div className='p-6 flex justify-center'>
+                            
+                        :   <div className='p-6 flex justify-center flex-wrap'>
                                 <NavLink to="/cart" 
                                     className='flex mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white'>
                                     <span>
@@ -55,6 +57,10 @@ const ItemDetail = ( {id, name, img, desc, price, category, stock} ) => {
                                         </svg>
                                     </span>
                                     Ir al Carrito
+                                </NavLink>
+                                <NavLink to="/" className='flex ml-2 mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white'> 
+                                    <FireIcon className="h-6 w-6" aria-hidden="true" fill="none" />
+                                        Seguir comprando
                                 </NavLink>
                                
                             </div>
