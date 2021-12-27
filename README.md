@@ -10,6 +10,9 @@
 * El proyecto se desarrolla dentro del marco de aprendizaje del curso de React Js en la plataforma Coderhouse.
 * Pretende la creación de la simulación de un e-commerce en el que se pueda navegar para encontrar, filtrar y categorizar productos para luego ser incluidos en un carrito de compras en el que se podrá generar una orden mediante Firestore como base de datos.
 
+### Deploy
+La experiencia con la App se puede testear en el siguiente deploy
+https://e-commerce-react19760-coderhouse-fiordelmondo.netlify.app/
 
 ## Pre-requisitos
 * La aplicación se levanta de manera local utilizando el lenguaje JavaScript y JSX mediante la librería ReactJs: 
@@ -119,6 +122,9 @@ Logged retorna al componente Order
 * src/components/order/Order.js
 A traves de promesas con la base de datos trae los documentos de la colección de ordenes que coincidan en el email registrado con el email loggeado actualmente
 Mediante mapeos desestructura los documentos para acceder a su información.
+
+##### Loader
+En la navegación por la App se utiliza el componente Loader para las transiciones de las promesas hasta que se carguen los datos.
 
 ### Assets
 En la carpeta src/assets se encuentran la imágen del logo usada de manera local
