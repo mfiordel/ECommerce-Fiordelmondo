@@ -62,11 +62,9 @@ const ItemDetail = ( {id, name, img, desc, price, category, stock} ) => {
                                     <FireIcon className="h-6 w-6" aria-hidden="true" fill="none" />
                                         Seguir comprando
                                 </NavLink>
-                               
                             </div>
                 }
             </div>
-            
         </div>
     )
 }

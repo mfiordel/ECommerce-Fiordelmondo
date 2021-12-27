@@ -6,6 +6,10 @@ import { db } from '../../firebase/config'
 import { NavLink } from 'react-router-dom'
 import { collection, addDoc, Timestamp, getDocs, writeBatch, documentId,query ,where } from 'firebase/firestore'
 import Loader from '../loader/Loader'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const Checkout = () => {
 
@@ -31,15 +35,30 @@ const Checkout = () => {
         e.preventDefault()
         
         if (values.name.length < 3){
-            alert("Ingrese un nombre válido")
+            MySwal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ingresa un nombre válido',
+                footer: ''
+              })
             return
         }
         if (values.email.length < 4){
-            alert("Ingrese un email válido")
+            MySwal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ingresa un email válido',
+                footer: ''
+              })
             return
         }
         if (values.tel.length < 8){
-            alert("Ingrese un tel válido")
+            MySwal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ingresa un teléfono valido',
+                footer: ''
+              })
             return
         }
 
@@ -52,11 +71,9 @@ const Checkout = () => {
         }
         
         const batch = writeBatch(db)
-
         const ordersRef = collection(db, "orders")
         const itemsRef = collection(db, "servicios")
         const q = query(itemsRef, where(documentId(), 'in', cart.map(el=> el.id)))
-
         const outOfStock = []
 
         setLoading(true)
@@ -65,7 +82,6 @@ const Checkout = () => {
                 
                 res.docs.forEach((doc) =>{
                     const itemToUpdate = cart.find((prod) => prod.id === doc.id)
-
                     if(doc.data().stock >= itemToUpdate.quantity) {
                         batch.update(doc.ref, {
                             stock: doc.data().stock - itemToUpdate.quantity
@@ -74,7 +90,6 @@ const Checkout = () => {
                         outOfStock.push(itemToUpdate)
                     }
                 })
-
                 if (outOfStock.length === 0 ){
                     addDoc(ordersRef, order)
                         .then((res) => {
@@ -85,30 +100,16 @@ const Checkout = () => {
                         .finally(()=>{
                             setLoading(false)
                         })
-
-                    
                 } else {
-                    alert("Los siguientes productos en tu carrito sobrepasan el stock: " + outOfStock.map(el=> el.name).join(', '))
+                    MySwal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Los siguientes productos sobrepasan el stock',
+                        footer: outOfStock.map(el=> el.name).join(', ')
+                      })
                     setLoading(false)     
                 }
             })
-        /* UPDATE DOCS => For future admin panel        
-        /*cart.forEach((prod)=>{
-            const docRef = doc(itemsRef, prod.id)
-
-            getDoc(docRef)
-                .then((doc)=>{
-                    if(doc.data().stock >= prod.quantity){
-                    updateDoc(docRef, {
-                        stock: doc.data().stock - prod.quantity
-                    })
-                }
-                    
-                })
-
-            
-        })*/
-
     }
 
     if (loading) {
@@ -125,8 +126,6 @@ const Checkout = () => {
                 <h3 className="text-3xl font-medium leading-tight mt-0 mb-2">CheckOut</h3>
             </span>
             </div>
-                
-
             {
                 orderId
                 ? <>

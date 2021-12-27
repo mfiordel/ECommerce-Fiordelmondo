@@ -8,14 +8,11 @@ import { db } from '../../firebase/config'
 const Order = () => {
 
     const {user} = useContext(UserContext)
-
     const [data, setData] = useState([])
-    
+   
     useEffect(() => {
         const ordersRef = collection(db, "orders")
-
         const q = user.email ? query(ordersRef, where('buyer.email', '==', user.email)) : ordersRef
-
         getDocs(q)
             .then((snapshot) => {
                 const items = snapshot.docs.map ((doc) => ({id: doc.id ,...doc.data()}))
@@ -26,7 +23,6 @@ const Order = () => {
             })
 
     }, [user])
-
     if (data.length === 0) {
         return (
             <h3 className='my-3 mx-2'>No hay órdenes de compras</h3>

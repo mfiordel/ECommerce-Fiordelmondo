@@ -14,7 +14,6 @@ export const CartContextProvider = ({children}) => {
         localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
     
-
     const addCart = (item) => {
         setCart([...cart, item]);
         }
@@ -53,8 +52,6 @@ export const CartContextProvider = ({children}) => {
         return cart.some( prod => prod.id === id )
       }
 
-
-    
     return(
         <CartContext.Provider value = {{
             cart,
