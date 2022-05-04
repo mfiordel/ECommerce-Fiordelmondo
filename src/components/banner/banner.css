@@ -1,0 +1,15 @@
+#banner {
+    background-image: url(https://img.freepik.com/free-photo/geometric-composition_24972-787.jpg?t=st=1651683658~exp=1651684258~hmac=4cef7e7bc3a216bd786cbd0b5e403b4f9ec70536210e734a48c2519181a781c1&w=1380);
+    background-position: 30% 30%;
+    background-size: 170%;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+    #banner {
+        background-image: url(https://img.freepik.com/free-photo/geometric-composition_24972-787.jpg?t=st=1651683658~exp=1651684258~hmac=4cef7e7bc3a216bd786cbd0b5e403b4f9ec70536210e734a48c2519181a781c1&w=1380);
+        background-position: 30% 30%;
+        background-size: 500%;
+        background-repeat: no-repeat;
+    }
+    }

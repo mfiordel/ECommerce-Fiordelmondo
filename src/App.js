@@ -19,6 +19,7 @@ function App() {
       <CartContextProvider >
         <Router>
           <NavBar/>
+          <div className="box-border my-3 mx-4 text-center content-center flex-row justify-around py-4 px-4 shadow-2xl">
           <Routes>
             <Route exact path = "/" element={<ItemListContainer/>}></Route>
             <Route exact path = "/category/:categoryId" element={<ItemListContainer/>}></Route>
@@ -31,6 +32,7 @@ function App() {
                                                 </RestrictedRoute>}/>
             <Route element={<h2>Not found</h2>}/>
           </Routes>
+          </div>
         </Router>
       </CartContextProvider>
     </UserContextProvider>

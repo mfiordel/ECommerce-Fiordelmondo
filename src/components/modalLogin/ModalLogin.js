@@ -66,7 +66,7 @@ const ModalLogin = ({modalClose}) => {
                     </div>
                     <div className="container">
                             <div className="container">
-                                <div className="input-group mb-3">
+                                <div className="input-group mb-3 ml-6">
                                     <input 
                                         type="text" 
                                         className='ml-4 shadow appearance-none border rounded w-min py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
@@ -76,7 +76,7 @@ const ModalLogin = ({modalClose}) => {
                                         onChange={(e)=> setEmail(e.target.value)} 
                                     />
                                 </div>
-                                <div className="input-group mb-3">
+                                <div className="input-group mb-3  ml-6">
                                     <input 
                                         type="password" 
                                         className='ml-4 shadow appearance-none border rounded w-min py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
@@ -90,10 +90,10 @@ const ModalLogin = ({modalClose}) => {
                             
                         </div>
                     <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row">  
-                        <h3>O ingresá con</h3>                   
+                        <h3 className='ml-6 font-semibold mt-1'>O ingresá con Google</h3>                   
                         <button
                             type="button"
-                            className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-200 text-base font-medium text-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                            className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-200 text-base font-medium text-white hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
                             onClick={googleAuth}>
                             <img className="w-4" alt="googleIcon" src="https://img.icons8.com/color/50/000000/google-logo.png"/>
                         </button>      
