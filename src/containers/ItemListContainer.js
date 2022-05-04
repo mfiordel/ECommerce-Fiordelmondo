@@ -35,7 +35,7 @@ const ItemListContainer = () => {
     const nextPage = () => {
         setCurrentPage( currentPage + 5)
         window.scrollTo({
-            top: 700,
+            top: 1200,
             left: 0,
             behavior: "smooth"
           })
@@ -44,7 +44,7 @@ const ItemListContainer = () => {
     const previousPage = () => {
         setCurrentPage ( currentPage - 5)
         window.scrollTo({
-            top: 700,
+            top: 1200,
             left: 0,
             behavior: "smooth"
           })
