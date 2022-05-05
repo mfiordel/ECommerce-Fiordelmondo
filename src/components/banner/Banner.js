@@ -11,7 +11,7 @@ const Banner = () => {
     }
 
     return (
-        <div id="banner" className="flex flex-wrap flex-row  box-border md:mt-20 mb-20 pt-10 md:pt-0 lg:pt-10 pl-4 md:pd-14 lg:pl-20 text-left shadow-2xl  ">
+        <div id="banner" className="flex flex-wrap flex-row  box-border md:mt-20 mb-20 pt-10 md:pt-0 lg:pt-10 pl-4 md:pd-14 lg:pl-20 text-left shadow-2xl">
             <div className="flex-grow py-6">
                 <h1 className="font-semibold text-2xl md:text-4xl">
                     Facilitamos tus ideas.
@@ -25,14 +25,14 @@ const Banner = () => {
                     onClick={scrollBanner}>
                         Nuestros Diseños
                 </button>
-                <p className="font-semibold mt-6    ">Nuestros trabajos realizados para Freepik Company.</p>
+                <p className="font-semibold mt-6">Nuestros trabajos realizados para Freepik Company.</p>
                 <p className="font-semibold">A disposición para que los editemos a tu gusto.</p>
                 <div className="flex w-56">
                     
                     <img src="https://cdn-icons-png.flaticon.com/512/1841/1841784.png"></img>
                 </div>
             </div>
-            <div className="font-semibold pr-12 flex lg:flex-wrap md:flex-wrap sm:flex-wrap flex-nowrap flex-grow my-4 object-contain ">
+            <div className="font-semibold pr-12 flex lg:flex-wrap md:flex-wrap sm:flex-wrap flex-nowrap flex-grow my-4 object-contain">
                 
                 <img 
                     src="https://img.freepik.com/free-psd/flat-design-technology-template_23-2149322450.jpg?w=1380"

@@ -16,7 +16,6 @@ const ItemListContainer = () => {
         const itemsRef = collection(db, 'servicios')
         const q = categoryId ? query(itemsRef, where('type', '==', categoryId)) : itemsRef
         
-
         getDocs(q)
             .then( (snapshot) => {
                 const items = snapshot.docs.map((doc) =>({
@@ -25,11 +24,15 @@ const ItemListContainer = () => {
                     })
                 )
                 setItems(items)
+                setCurrentPage(0)
             })
+
+
     }, [categoryId]);
 
     const filtered = () => {
         return items.slice(currentPage, currentPage + 10)
+        
     }
 
     const nextPage = () => {
@@ -72,16 +75,17 @@ const ItemListContainer = () => {
                                     <button
                                         className='p-1 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-white mt-2 font-semibold hover:bg-gray-200'
                                         onClick={nextPage}
-                                        disabled={currentPage===maxItems}>
+                                        disabled={currentPage===maxItems || items.length<=10}>
                                             Siguiente
                                     </button>
-                                    <div className="box-border border-t-8 border-b-8 pb-2 border-gray-600 my-2 py-4 text-left flex-row justify-around shadow-2xl ">
+                                    <div className="box-border border-t-8 border-b-8 py-4 px-4 border-gray-600 my-2 text-left flex-col justify-around shadow-2xl ">
                                         <p className="py-2 font-semibold">Dentro del detalle de cada producto se encuentra el enlace perteneciente a Freepik en el que podrás encontrar el sistema gráfico de la pieza en diferentes formatos y variables</p>
                                         <p className="">Es probable que te encuentres con algunas <span className="font-semibold">piezas Premium</span> a las cuales <span className="font-semibold"> solo podrás acceder mediante la membresía de Freepik correspondiente</span></p>
                                         <p className="">Si no encuentras lo que buscas, te invitamos a navegar libremente por Freepik en donde podrás explorar su enorme banco de recursos</p>
                                         <p className="py-2 font-semibold">No olvides que aún así, nosotros podemos editar y modificar cualquier pieza externa que desees a tu gusto</p>
-                                        <ItemList items = {filtered()} />
+                                       
                                     </div>
+                                    <ItemList items = {filtered()} />
                                     <button 
                                         className='p-1 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-white mt-2 font-semibold hover:bg-gray-200'
                                         onClick={previousPage}
@@ -92,7 +96,7 @@ const ItemListContainer = () => {
                                     <button
                                         className='p-1 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-white mt-2 font-semibold hover:bg-gray-200'
                                         onClick={nextPage}
-                                        disabled={currentPage===maxItems}>
+                                        disabled={currentPage===maxItems || items.length<=10}>
                                             Siguiente
                                     </button>
                                 </div>
