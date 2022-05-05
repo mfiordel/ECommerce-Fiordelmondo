@@ -27,17 +27,15 @@ const Banner = () => {
                 </button>
                 <p className="font-semibold mt-6">Nuestros trabajos realizados para Freepik Company.</p>
                 <p className="font-semibold">A disposición para que los editemos a tu gusto.</p>
-                <div className="flex w-56">
-                    
+                <div className="flex w-56">     
                     <img src="https://cdn-icons-png.flaticon.com/512/1841/1841784.png"></img>
                 </div>
             </div>
-            <div className="font-semibold pr-12 flex lg:flex-wrap md:flex-wrap sm:flex-wrap flex-nowrap flex-grow my-4 object-contain">
-                
+            <div className="font-semibold pr-12 flex lg:flex-wrap md:flex-wrap sm:flex-wrap flex-nowrap flex-grow my-4 object-contain">       
                 <img 
                     src="https://img.freepik.com/free-psd/flat-design-technology-template_23-2149322450.jpg?w=1380"
-                    className="hidden sm:block md:block flex flex-shrink sm:h-24 md:h-36 lg:h-96 h-96"
-                ></img>
+                    className="hidden sm:block md:block flex flex-shrink sm:h-24 md:h-36 lg:h-96 h-96">
+                </img>
                 <img 
                     src="https://img.freepik.com/free-psd/flat-design-instagram-stories-climate-change-template_23-2149236945.jpg?w=1380"
                     className="hidden sm:block md:block flex flex-shrink sm:h-24 md:h-36 lg:h-96 h-96"

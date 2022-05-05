@@ -65,30 +65,29 @@ const ModalLogin = ({modalClose}) => {
                         </div>
                     </div>
                     <div className="container">
-                            <div className="container">
-                                <div className="input-group mb-3 ml-6">
-                                    <input 
-                                        type="text" 
-                                        className='ml-4 shadow appearance-none border rounded w-min py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
-                                        id="email" 
-                                        name = "email" 
-                                        placeholder='Email'
-                                        onChange={(e)=> setEmail(e.target.value)} 
-                                    />
-                                </div>
-                                <div className="input-group mb-3  ml-6">
-                                    <input 
-                                        type="password" 
-                                        className='ml-4 shadow appearance-none border rounded w-min py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                                        id="password"
-                                        name="password"
-                                        placeholder='Contraseña'
-                                        onChange={(e)=> setPassword(e.target.value) }
-                                    />
-                                </div>
+                        <div className="container">
+                            <div className="input-group mb-3 ml-6">
+                                <input 
+                                    type="text" 
+                                    className='ml-4 shadow appearance-none border rounded w-min py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
+                                    id="email" 
+                                    name = "email" 
+                                    placeholder='Email'
+                                    onChange={(e)=> setEmail(e.target.value)} 
+                                />
                             </div>
-                            
-                        </div>
+                            <div className="input-group mb-3  ml-6">
+                                <input 
+                                    type="password" 
+                                    className='ml-4 shadow appearance-none border rounded w-min py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                                    id="password"
+                                    name="password"
+                                    placeholder='Contraseña'
+                                    onChange={(e)=> setPassword(e.target.value) }
+                                />
+                            </div>
+                        </div>  
+                    </div>
                     <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row">  
                         <h3 className='ml-6 font-semibold mt-1'>O ingresá con Google</h3>                   
                         <button

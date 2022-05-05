@@ -59,7 +59,6 @@ const Order = () => {
                                                 }
                                             </div>
                                         </div>
-
                                         <div className="ml-4 flex-1 flex flex-col">
                                             <div>
                                                 <div className="flex justify-between text-base font-medium text-gray-900">
@@ -71,21 +70,18 @@ const Order = () => {
                                                 <p className="text-sm text-gray-500">{product.buyer.email}</p>
                                                 <p className="mt-1 text-sm font-semibold">Costo total de la compra</p>
                                                 <p className="mt-1 text-sm text-gray-500">${product.total}</p>
-                                                
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                        
+                        </div>   
                         </>
                     ))
                 }
             </div>
         )
     }
-
 }
 
 export default Order

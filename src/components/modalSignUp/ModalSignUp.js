@@ -53,24 +53,24 @@ const ModalSignup = ( {modalClose}) => {
                     leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 >
                     <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                    <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <div className="sm:flex sm:items-start">
-                        <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
-                            <IdentificationIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
-                        </div>
-                        <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                            <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                            Registrate
-                            </Dialog.Title>         
-                            <div className="mt-2">
-                                <p className="text-sm text-gray-500">
-                                    Crea un usuario con tu email y una nueva contraseña
-                                </p>
+                        <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                            <div className="sm:flex sm:items-start">
+                                <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                                    <IdentificationIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
+                                </div>
+                                <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                    <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
+                                    Registrate
+                                    </Dialog.Title>         
+                                    <div className="mt-2">
+                                        <p className="text-sm text-gray-500">
+                                            Crea un usuario con tu email y una nueva contraseña
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                    </div>
-                    <div className="container">
+                        <div className="container">
                             <div className="container">
                                 <div className="input-group mb-3 ml-6">
                                     <input 
@@ -92,34 +92,33 @@ const ModalSignup = ( {modalClose}) => {
                                         onChange={(e)=> setPassword(e.target.value) }
                                     />
                                 </div>
-                            </div>
-                            
+                            </div>                          
                         </div>
-                    <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row">  
-                        <h3 className='ml-6 font-semibold mt-1'>O registrate con Google</h3>
-                        <button
+                        <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row">  
+                            <h3 className='ml-6 font-semibold mt-1'>O registrate con Google</h3>
+                            <button
+                                type="button"
+                                className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-200 text-base font-medium text-white hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                                onClick={googleAuth}>
+                                <img className="w-4" alt="googleIcon" src="https://img.icons8.com/color/50/000000/google-logo.png"/>
+                            </button>      
+                        </div>  
+                        <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">    
+                            <button 
+                                type="button" 
+                                className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                                onClick={handleSignup}>
+                                Registrate
+                            </button>
+                            <button
                             type="button"
-                            className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-200 text-base font-medium text-white hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                            onClick={googleAuth}>
-                            <img className="w-4" alt="googleIcon" src="https://img.icons8.com/color/50/000000/google-logo.png"/>
-                        </button>      
-                    </div>  
-                    <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">    
-                        <button 
-                            type="button" 
-                            className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                            onClick={handleSignup}>
-                            Registrate
-                        </button>
-                        <button
-                        type="button"
-                        className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                        onClick={() => modalClose(false)}
-                        ref={cancelButtonRef}
-                        >
-                        Cancel
-                        </button>                    
-                    </div>                  
+                            className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                            onClick={() => modalClose(false)}
+                            ref={cancelButtonRef}
+                            >
+                            Cancel
+                            </button>                    
+                        </div>                  
                     </div>
                 </Transition.Child>
                 </div>

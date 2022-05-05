@@ -48,7 +48,6 @@ const ItemDetail = ( {id, name, img, desc, price, category, stock, link} ) => {
                                 setQuantity={setQuantity}
                                 onAdd = {handleAdd}
                             />
-                            
                         :   <div className='p-6 flex justify-center flex-wrap'>
                                 <NavLink to="/cart" 
                                     className='flex mt-2 p-2 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none bg-gray-600 text-white hover:bg-gray-400'>

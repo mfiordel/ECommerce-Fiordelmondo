@@ -78,8 +78,7 @@ const Checkout = () => {
 
         setLoading(true)
         getDocs(q)
-            .then ((res) =>{
-                
+            .then ((res) =>{   
                 res.docs.forEach((doc) =>{
                     const itemToUpdate = cart.find((prod) => prod.id === doc.id)
                     if(doc.data().stock >= itemToUpdate.quantity) {
@@ -127,8 +126,8 @@ const Checkout = () => {
             </span>
             </div>
             {
-                orderId
-                ? <>
+                orderId ? 
+                <>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="relative z-10 top-7 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -138,7 +137,7 @@ const Checkout = () => {
                     <p className="mt-6 mb-6"><span className='font-semibold'>Tu número de orden es:</span> {orderId}</p>
                     <NavLink to="/" className='p-1 rounded-md shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none'>Volver</NavLink>
                 </>
-                : <>
+                :   <>
                         <form onSubmit={handleSubmit} className='pl-4'>
                         <svg xmlns="http://www.w3.org/2000/svg" className="relative right-7 top-8 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -202,14 +201,8 @@ const Checkout = () => {
                         &copy;2021 MantisCosmik. All rights reserved.
                     </p>
                 </>
-            }
-
-            
-
-            
-        </div>
-
-       
+            } 
+        </div>     
     )
 }
 export default Checkout
